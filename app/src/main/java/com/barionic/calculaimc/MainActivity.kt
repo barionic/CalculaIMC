@@ -9,6 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.text.DecimalFormat
+import java.text.NumberFormat
+import java.util.Locale
 import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
@@ -74,14 +77,22 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        resultado = peso / altura.pow(2)
+        val language = Locale.getDefault().language
+        if (language == "pt"){
+            resultado = peso / altura.pow(2)
+        } else {
+            resultado = 703*(peso / altura.pow(2))
+        }
 
-        tvResultado.text = "%.2f".format(resultado)
+
+        val nf = NumberFormat.getNumberInstance(Locale.getDefault())
+        val df = nf as DecimalFormat
+        tvResultado.text = df.format(resultado)
     }
 
     private fun btLimparOnClick() {
         etPeso.text.clear() //ou etPeso.setText("")
-        etAltura.text.clear()
+        etAltura.text.clear() //dá pra fazer nf + df para o zero também se quiser
         tvResultado.text = getString(R.string.zeros_inciais)
         etPeso.requestFocus()
     }
