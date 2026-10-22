@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Peso:"
+        android:text="@string/peso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
         <!-- dp = pixel de densidade -->
@@ -22,7 +22,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="Peso em Kg"
+        android:hint="@string/hint_peso"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toEndOf="@id/tvPeso"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -32,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Altura:"
+        android:text="@string/altura"
         app:layout_constraintStart_toStartOf="@id/tvPeso"
         app:layout_constraintTop_toBottomOf="@id/tvPeso"/>
 
@@ -41,7 +42,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="Altura em m"
+        android:hint="@string/hint_altura"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toEndOf="@id/tvAltura"
         app:layout_constraintTop_toBottomOf="@id/etPeso"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -51,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="IMC:"
+        android:text="@string/imc"
         app:layout_constraintStart_toStartOf="@id/tvAltura"
         app:layout_constraintTop_toBottomOf="@id/tvAltura"/>
 
@@ -61,7 +63,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="8dp"
-        android:text="0.0"
+        android:text="@string/zeros_inciais"
         app:layout_constraintStart_toEndOf="@id/tvIMC"
         app:layout_constraintTop_toTopOf="@id/tvIMC" />
 
@@ -69,7 +71,7 @@
         android:id="@+id/btCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
+        android:text="@string/calcular"
         app:layout_constraintStart_toStartOf="@id/tvResultado"
         app:layout_constraintTop_toBottomOf="@id/tvResultado" />
 
@@ -77,7 +79,7 @@
         android:id="@+id/btLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Limpar"
+        android:text="@string/limpar"
         app:layout_constraintStart_toEndOf="@id/btCalcular"
         app:layout_constraintTop_toTopOf="@id/btCalcular"/>
 
